@@ -15,12 +15,14 @@ def getDetail(link):
     tax = price.find('div', attrs={'class':'tax'})
     firstPrice = tax.span.text
     panelDetail = tax.find('span', attrs={'class':'panelDetail'}).text
+    print parsed_html.find('span', attrs={'class':'price_red'})
     print 'totalPrice : ', totalPrice
     print 'unitPriceValue : ', unitPriceValue
     print 'firstPrice : ', firstPrice
     print 'panelDetail : ', panelDetail
 
-response = urllib2.urlopen('http://cq.lianjia.com/ershoufang/jiangbei/tf1de1ie2y1sf1bp90ep170/')
+
+response = urllib2.urlopen('http://cq.lianjia.com/ershoufang/jiangbei/tf1de1y1sf1bp90ep170/')
 html = response.read()
 
 parsed_html = BeautifulSoup(html, 'lxml')
